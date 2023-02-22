@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+
+*{
+
+    margin: 0;
+}
+
+.mat-horizontal-content-container {
+    text-align: center;
+    width: 100%;
+}
+
+
+.mat-horizontal-stepper-content:not(.mat-horizontal-stepper-content-inactive) {
+    visibility: inherit !important;
+    /* background: rebeccapurple; */
+    text-align: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
