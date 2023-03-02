@@ -1,40 +1,40 @@
 
 
 <mat-stepper class="form" linear #stepper>
-  <mat-step class="form" [stepControl]="firstFormGroup" >
-    <form [formGroup]="firstFormGroup">
+  <form [formGroup]="firstFormGroup">
+  <mat-step class="form"  >
       <ng-template matStepLabel>campaign  Name</ng-template>
       <mat-form-field class="inputs" appearance="fill">
         <mat-label>campaign  Name</mat-label>
-        <input  matInput formControlName="firstCtrl" placeholder="..." required>
+        <input formControlName="campaignName"   matInput  placeholder="..." required>
       </mat-form-field>
-      <div>
-        <button mat-raised-button color="primary" matStepperNext>Next</button>
-
-
+      <div >
+        <button  type="button" mat-raised-button color="primary" matStepperNext>Next</button>
       </div>
-    </form>
+
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup" >
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
-      <mat-form-field appearance="fill">
-        <mat-label>Address</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+  <mat-step  class="form">
+
+      <ng-template matStepLabel>Message</ng-template>
+      <mat-form-field appearance="fill" class="inputs">
+        <mat-label>start typing Message...</mat-label>
+        <input formControlName="message" matInput  placeholder="start typing Message..."
                required>
       </mat-form-field>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button type="button" mat-button matStepperPrevious>Back</button>
+        <button type="button" mat-button matStepperNext>Next</button>
       </div>
-    </form>
+
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
     <p>You are now done.</p>
     <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button type="button" mat-button matStepperPrevious>Back</button>
+      <!-- <button mat-button (click)="stepper.reset()">Complete</button> -->
+      <button mat-button (click)="openDialog()">Done</button>
     </div>
   </mat-step>
+</form>
 </mat-stepper>
